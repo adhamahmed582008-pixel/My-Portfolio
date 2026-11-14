@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adham Ahmed | Personal Portfolio</title>
+    <link rel="icon" href="images/Diego Brando Icon.jpg" type="image/jpeg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior:smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #e8e8f5;
+            line-height: 1.6;
+            background: linear-gradient(#6001fb,#01010d );
+        }
+
+        a {
+            color: #ff6ec4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #88f9c0;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff6ec4;
+            margin-bottom: 40px;
+        }
+
+        /* Header and navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #0d0b1f;
+            border-bottom: 1px solid #333152;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 8%;
+        }
+
+        .brand {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #e8e8f5;
+            transition: color 0.0s;
+        }
+
+        .nav-links a:hover {
+            color: #88f9c0;
+        }
+
+        /* Buttons */
+        .main-button {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 25px;
+            background: #ff6ec4;
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            cursor:pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .main-button:hover {
+            transform: translateY(-3px);
+            background: #e055a8;
+            color: #ffffff;
+        }
+
+        .outline-button {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 25px;
+            border: 2px solid #4de1ff;
+            background: transparent;
+            color: #4de1ff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .outline-button:hover {
+            background: #4de1ff;
+            color: #0d0b1f;
+        }
+        
+        .intro {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .topper {
+            display: inline-block;
+            color: #4de1ff;
+            border: 1px solid #4de1ff;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .intro h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .headline {
+            font-size: 1.3rem;
+            color: #ff6ec4;
+            margin-bottom: 15px;
+        }
+
+        .intro-text {
+            color: #a9a6c9;
+            margin-bottom: 10px;
+            max-width: 500px;
+        }
+
+        .intro .main-button {
+            margin-top: 15px;
+        }
+
+        .profile-photo {
+            display: block;
+            width: 280px;
+            height: 280px;
+            max-width: 80vw;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ff6ec4;
+            box-shadow: 0 10px 30px rgba(255, 110, 196, 0.35);
+            transition: transform 0.4s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .intro-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: 0 auto 30px;
+            text-align: center;
+            color: #a9a6c9;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin: 40px 0 20px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid #333152;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            border-color:#88f9c0 ;
+            
+        }
+
+        .info-icon {
+            display: block;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .info-card h4 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .info-card p {
+            color: #a9a6c9;
+        }
+        .goals-box {
+            max-width: 750px;
+            margin: 40px auto 0;
+            text-align: center;
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(77, 225, 255, 0.1);
+            border: 2px solid #88f9c0;
+        }
+        .goals-box h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .goals-box p {
+            color: #88f9c0;
+        }
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+            gap: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .skill-badge {
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #ffffff;
+            transition: transform 0.3s;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-6px);
+        }
+
+        .skill-badge{ background: linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); }
+        .skill-badge{ background: linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); }
+        .skill-badge{ background: linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); }
+        .skill-badge{ background: linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); }
+        .skill-badge{ background: linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            max-width: 5000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #88f9c0(255, 255, 255, 0.06);
+            border: 1px solid #333152;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(120, 115, 245, 0.35);
+        }
+
+        .project-card h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #88f9c0;
+            margin-bottom: 15px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            color: #a9a6c9;
+            margin-bottom: 12px;
+        }
+
+        .contact-info strong {
+            color: #ffffff;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid #333152;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .form-heading {
+            color: #ffffff;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #333152;
+            background: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            font-size: 15px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff6ec4;
+            box-shadow: 0 0 10px rgba(255, 110, 196, 0.5);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .form-buttons input {
+            font-size: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 8%;
+            border-top: 1px solid #88f9c0;
+            color: #a9a6c9;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        @media (max-width: 900px) {
+            .intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .intro-text {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 50px 5%;
+            }
+
+            .navbar {
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 14px;
+                justify-content: center;
+            }
+
+            .intro h1 {
+                font-size: 2.3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            p,h1,h2,h3,h4,h5,h6{
+                text-wrap:balance;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="#introduction" class="portfolio"><span>Eng Adham Ahmed </span></a>
+            <ul class="nav-links">
+                <li><a href="#introduction">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="main-button">Contact Me</a>
+        </nav>
+    </header>
+    <main>
+        <section id="introduction" class="intro">
+            <div class="intro-content">
+                <span class="topper">Full Stack Developer</span>
+                <h1>Adham Ahmed</h1>
+                <p class="headline">Aspiring Full Stack  Engineer</p>
+                <p class="intro-text">Student at the Faculty of Computers and Data Science.</p>
+                <p class="intro-text">A 18 years old student hopping to be a profisonal Full Stack  Developer   </p>
+                <a href="#projects" class="main-button">View Projects</a>
+            </div>
+            <div class="intro-image">
+                <img src="images/Me.jpeg" width="280" height="280" alt="Profile picture of Adham Ahmed" class="profile-photo">
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <article>
+                <p class="about-text">
+                    I am a Computers and Data Science student. I have worked on Java assignments and a
+                    Java final project with a team of Three.
+                </p>
+            </article>
+            <h3 class="sub-title">My Interests</h3>
+            <div class="cards-grid">
+                <div class="info-card">
+                    <span class="info-icon">🎮</span>
+                    <h4>Favorite Game</h4>
+                    <p>Genshin Impact <br> Honkai Star Rail</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">📺</span>
+                    <h4>Favorite Series</h4>
+                    <p>Dexter <br> JoJo's Bizarre Adventure</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">🎬</span>
+                    <h4>Favorite Movie</h4>
+                    <p>La La Land <br> Me Before You</p>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">🎵</span>
+                    <h4>Favorite Music Artist</h4>
+                    <p>Dua Lipa <br> Taylor Swift</p>
+                </div>
+            </div>
+            <div class="goals-box">
+                <h3>Future Goals</h3>
+                <p>To be a successful Full Stack engineer.</p>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li class="skill-badge">Java</li>
+                <li class="skill-badge">HTML</li>
+                <li class="skill-badge">CSS</li>
+                <li class="skill-badge">C++</li>
+                <li class="skill-badge">Python</li>
+                <li class="skill-badge">Javascript</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Quick Pay Digital Wallet</h3>
+                    <p>
+                        A Java final project that simulates a digital wallet with an Admin panel and a User
+                        panel. I worked on it as part of a team of three.
+                    </p>
+                    <a href="https://github.com/adhamahmed582008-pixel/Quick_Pay_Project" target="_blank">View project link →</a>
+                </article>
+                <article class="project-card">
+                    <h3>Portfolio</h3>
+                    <p>Your watcching it now</p>
+                </article>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="adhamahnmed582008@gmail.com">adhamahnmed582008@gmail.com</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/adhamahmed582008-pixel" target="_blank">github.com/adhamahmed582008-pixel</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adham-ahmed-b18868429" target="_blank">Adham Ahmed</a></p>
+                </div>
+                <form class="contact-form" action="#" method="post">
+                    <h3 class="form-heading">Send Me a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <input type="submit" value="Submit" class="main-button">
+                    <input type="reset" value="Reset" class="outline-button">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><a href="#introduction">Back to top ↑</a></p>
+        <p>2026 Adham Ahmed</p>
+    </footer>
+</body>
+</html>
